@@ -14,14 +14,12 @@ public class q8 {
 		num_ary = new int[arySize];
 		
 		for (int i=0; i < arySize; i++) {
-			int k = r.nextInt(100);
-			for (int j : num_ary) {
-				if (j == k)
-					k = r.nextInt(100);
+			num_ary[i] = r.nextInt(100);
+			for (int j = 0; j < i; j++) {
+				if (num_ary[i] == num_ary[j])
+					i--;
 			}
-			num_ary[i] = k;
 		}
-		
 		for (int i=0; i < arySize; i++) {
 			System.out.printf("%d ",num_ary[i]);
 			if ((i+1) % 10 == 0)
